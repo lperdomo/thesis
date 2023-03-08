@@ -1,0 +1,489 @@
+\documentclass{beamer}
+
+\usetheme{Antibes}
+\usecolortheme[RGB={120,0,0}]{structure}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\usepackage[latin1]{inputenc}
+\usepackage{ragged2e}
+\usepackage{pgfplots}
+\usepackage{booktabs}
+\usepackage{subfig}
+\usepackage{cite}
+\usepackage{caption}
+
+\usetikzlibrary{pgfplots.statistics}
+
+\definecolor{orange}{RGB}{230, 159, 0}
+\definecolor{skyblue}{RGB}{86, 180, 233}
+\definecolor{purple}{RGB}{204, 121, 167}
+
+\pgfplotsset{
+  precision recall/.style={
+    width=0.9\textwidth, 
+	height=0.9\textwidth,
+	grid=major,
+	grid style={dashed, gray!30},
+	xlabel=Recall,
+	xlabel style={font=\scriptsize, at={(axis description cs:0.5,0.05)}},
+	ylabel=Precision,	
+	ylabel style={font=\scriptsize, at={(axis description cs:0.1,0.5)}},		
+	legend style={font=\tiny},
+	cycle list={
+		{color=orange, line width=0.75pt, mark=none, mark options={line width=1pt, draw=orange, fill=orange, scale=1.5}},
+		{color=purple, line width=0.75pt, mark=none, mark options={line width=1pt, draw=purple, fill=purple, scale=1.5}},
+		{color=skyblue, line width=0.75pt, mark=none, mark options={line width=1pt, draw=skyblue, fill=skyblue, scale=1.5}},
+		{color=black, line width=0.75pt, mark=none, mark options={line width=1pt, draw=black, fill=black, scale=1.5}},								
+	}
+  }
+}
+
+\pgfplotsset{
+  box plot times/.style={
+  	boxplot/draw direction = y,
+  	enlarge x limits=0.5,
+    width=1.15\textwidth, 
+    height=1.15\textwidth,
+    ymajorgrids,
+    grid style={dashed, gray!30},
+	xlabel=Descriptor,
+	xlabel style={font=\scriptsize, at={(axis description cs:0.5,0.05)}},
+	ylabel=Time ($s$),	
+	ylabel style={font=\scriptsize, at={(axis description cs:0.15,0.5)}},
+	cycle list={
+		{color=orange, mark=*, mark options={line width=0.5pt, draw=orange, fill=orange, scale=1.5}},
+		{color=skyblue, mark=*, mark options={line width=0.5pt, draw=skyblue, fill=skyblue, scale=1.5}},
+		{color=purple, mark=*, mark options={line width=0.5pt, draw=purple, fill=purple, scale=1.5}},
+		{color=black, mark=*, mark options={line width=0.5pt, draw=black, fill=black, scale=1.5}},						
+	}   
+  }
+}
+
+\begin{document}
+\title{Work in progress}
+
+%\begin{minipage}[b]{0.49\textwidth}
+%\begin{tikzpicture}
+%\begin{axis}[precision recall, legend pos=south west]
+%\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/precisionrecall_kitti00_m2dp.csv"};
+%\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/precisionrecall_kitti00_cm2dp.csv"};	
+%\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/precisionrecall_kitti00_cshot.csv"};			
+%\legend{M2DP, CM2DP*, CSHOT}
+%\end{axis}
+%\end{tikzpicture}
+%\end{minipage}
+%\hfill
+%\begin{minipage}[b]{0.49\textwidth}
+%\begin{tikzpicture}
+%\begin{axis} [box plot times, xtick=data]
+%\addplot+[boxplot, fill, draw=black] table [y index=0] {"data/build_kitti00_m2dp.csv"};
+%\addplot+[boxplot, fill, draw=black] table [y index=0] {"data/build_kitti00_cm2dp.csv"};
+%\addplot+[boxplot, fill, draw=black] table [y index=0] {"data/build_kitti00_cshot.csv"};	    
+%\end{axis}
+%\end{tikzpicture}    
+%\end{minipage}
+
+\section{Results}
+\frame{
+	\frametitle{KITTI 06 - Color Schemes}
+	\scriptsize
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/cm2dp/lab/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/cm2dp/hsv/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/cm2dp/rgb/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/cm2dp/ab/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};			
+			\legend{Lab, HSV, RGB, ab}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Camera-LIDAR fusion.}
+		\end{figure}  	
+	\end{minipage}  	
+	\begin{minipage}[t]{0.49\textwidth}  
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/cm2dp/lab/precisionrecall_kitti06_stereo_cm2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/cm2dp/hsv/precisionrecall_kitti06_stereo_cm2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon]
+			{"data/stereo/cm2dp/rgb/precisionrecall_kitti06_stereo_cm2dp.csv"};
+			\legend{Lab, HSV, RGB}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Stereo camera.}    
+		\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{KITTI 00}
+	\scriptsize
+	\begin{tabular}{lc|cc|cc}\hline
+		 & & \multicolumn{2}{c|}{Camera-LIDAR fusion} & \multicolumn{2}{c}{Stereo} \\ \hline
+		Descriptor & Dim. & Avg. time ($s$) & SD & Avg. time ($s$) & SD \\ \hline
+		M2DP & $192$ & $0.061973$ & $0.005332$ & $0.368949$ & $0.102033$ \\
+		CSHOT & $1344$ & $0.105004$ & $0.016634$ & $1.508606$ & $0.756144$ \\
+		c-M2DP (Our) & $\mathbf{576}$ & $\mathbf{0.077657}$ & $0.006301$ & $\mathbf{0.431147}$ & $0.114089$ \\ \hline
+	\end{tabular}	
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/m2dp/precisionrecall_kitti00_lidar_camera_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon]
+			{"data/lidar_camera/cshot/precisionrecall_kitti00_lidar_camera_cshot.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/cm2dp/rgb/precisionrecall_kitti00_lidar_camera_cm2dp.csv"};  	
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Camera-LIDAR fusion.}
+		\end{figure}  	
+	\end{minipage}  	
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/m2dp/precisionrecall_kitti00_stereo_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/cshot/precisionrecall_kitti00_stereo_cshot.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/cm2dp/rgb/precisionrecall_kitti00_stereo_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Stereo camera.}    
+		\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{KITTI 05}
+	\scriptsize
+	\begin{tabular}{lc|cc|cc}\hline
+		& & \multicolumn{2}{c|}{Camera-LIDAR fusion} & \multicolumn{2}{c}{Stereo} \\ \hline
+		Descriptor  & Dim. & Avg. Time ($s$) & SD & Avg. Time ($s$) & SD \\ \hline
+		M2DP & $192$ & $0.067374$ & $0.004087$ & $0.358436$ & $0.081641$ \\
+		CSHOT & $1344$ & $0.107232$ & $0.016794$ & $1.771053$ & $1.015856$ \\ 
+		c-M2DP (Our) & $\mathbf{576}$ & $\mathbf{0.082995}$ & $0.005184$ & $\mathbf{0.425875}$ & $0.095526$ \\ \hline
+	\end{tabular}	
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/m2dp/precisionrecall_kitti05_lidar_camera_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/cshot/precisionrecall_kitti05_lidar_camera_cshot.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/cm2dp/rgb/precisionrecall_kitti05_lidar_camera_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Camera-LIDAR fusion.}
+		\end{figure}  	
+	\end{minipage}  	
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/m2dp/precisionrecall_kitti05_stereo_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/cshot/precisionrecall_kitti05_stereo_cshot.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/cm2dp/rgb/precisionrecall_kitti05_stereo_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Stereo camera.}    
+		\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{KITTI 06}
+	\scriptsize
+	\begin{tabular}{lc|cc|cc}\hline
+		& & \multicolumn{2}{c|}{Camera-LIDAR fusion} & \multicolumn{2}{c}{Stereo} \\ \hline		
+		Descriptor & Dim. & Avg. Time ($s$) & SD & Avg. Time ($s$) & SD \\ \hline
+		M2DP & $192$ & $0.064661$ & $0.004323$ & $0.277192$ & $0.059929$ \\
+		CSHOT & $1344$ & $0.098741$ & $0.014548$ & $1.008401$ & $1.445941$ \\ 
+		c-M2DP (Our) & $\mathbf{576}$ & $\mathbf{0.080398}$ & $0.005358$ & $\mathbf{0.343553}$ & $0.070057$ \\ \hline
+	\end{tabular}	
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/m2dp/precisionrecall_kitti06_lidar_camera_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/cshot/precisionrecall_kitti06_lidar_camera_cshot.csv"};			
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/cm2dp/rgb/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Camera-LIDAR fusion.}
+		\end{figure}  	
+	\end{minipage}  	
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/m2dp/precisionrecall_kitti06_stereo_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/cshot/precisionrecall_kitti06_stereo_cshot.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/cm2dp/rgb/precisionrecall_kitti06_stereo_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Stereo camera.}    
+		\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{KITTI 07}
+	\scriptsize
+	\begin{tabular}{lc|cc|cc}\hline
+		& & \multicolumn{2}{c|}{Camera-LIDAR fusion} & \multicolumn{2}{c}{Stereo} \\ \hline		
+		Descriptor & Dim. & Avg. Time ($s$) & SD & Avg. Time ($s$) & SD \\ \hline
+		M2DP & $192$ & $0.064511$ & $0.006911$ & $0.395541$ & $0.091670$ \\
+		CSHOT & $1344$ & $0.095756$ & $0.012887$ & $1.755363$ & $0.782688$ \\ 
+		c-M2DP (Our) & $\mathbf{576}$ & $\mathbf{0.075719}$ & $0.005865$ & $\mathbf{0.478616}$ & $0.105816$ \\ \hline
+	\end{tabular}	
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=north east]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/m2dp/precisionrecall_kitti07_lidar_camera_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon]
+			{"data/lidar_camera/cshot/precisionrecall_kitti07_lidar_camera_cshot.csv"};	
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/cm2dp/rgb/precisionrecall_kitti07_lidar_camera_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Camera-LIDAR fusion.}
+		\end{figure}  	
+	\end{minipage}  	
+	\begin{minipage}[t]{0.49\textwidth}  
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/m2dp/precisionrecall_kitti07_stereo_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/cshot/precisionrecall_kitti07_stereo_cshot.csv"};  
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/cm2dp/rgb/precisionrecall_kitti07_stereo_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Stereo camera.}    
+		\end{figure}
+	\end{minipage}
+}
+	
+\frame{
+	\frametitle{KITTI 07 - LIDAR 360}
+	\scriptsize
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south east]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar/m2dp/precisionrecall_kitti07_lidar_m2dp.csv"};	
+			\legend{M2DP}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{LIDAR 360.}
+		\end{figure}  	
+	\end{minipage} 
+}
+
+\frame{
+	\frametitle{KITTI 00 - Camera+LIDAR fusion}
+	\begin{itemize}
+		\item Comparison between c-M2DP and CSHOT time means, using a paired sample \textit{t}-test:
+	\end{itemize}
+	\begin{minipage}[t]{0.49\textwidth}
+		\centering
+		\small
+		\begin{tabular}{l}
+			$\mu_D = \mu_1 - \mu_2$ \\
+			$H_o : \mu_D = 0$ \\
+			$H_a : \mu_D < 0$ \\  	  
+		\end{tabular}
+		\[S_D^2 = \frac{1}{n-1} \sum_{i=1}^{n} (D_i -   \overline{D})^2 = 0.000244\]
+		\[T = \frac{\overline{D}-\mu_D}{S_D/\sqrt{n}} = -117.964039\]
+		\[P(T < t_c) = 0.05\]  	
+	\end{minipage}  
+	\begin{minipage}[t]{0.49\textwidth}
+		\centering
+		\small  	
+		\begin{tabular}{l}
+			$n = 4541$ \\
+			$\overline{D} = -0.027347$ \\  	  
+			$\alpha = 0.05$ \\
+			$t_c = -1.645$ (\textit{t}-Student) \\
+		\end{tabular}
+		\newline \newline 
+		\newline \newline 
+		\newline \newline
+		$H_o$ rejected due to $T < t_c$.
+		\newline
+		$H_a$ accepted, c-M2DP is faster than CSHOT.  	
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{KITTI 00 - Stereo}
+	\begin{itemize}
+		\item Comparison between c-M2DP and CSHOT time means, using a paired sample \textit{t}-test:
+	\end{itemize}
+	\begin{minipage}[t]{0.49\textwidth}
+		\centering
+		\small
+		\begin{tabular}{l}
+			$\mu_D = \mu_1 - \mu_2$ \\
+			$H_o : \mu_D = 0$ \\
+			$H_a : \mu_D < 0$ \\  	  
+		\end{tabular}
+		\[S_D^2 = \frac{1}{n-1} \sum_{i=1}^{n} (D_i -   \overline{D})^2 = 0.465393\]
+		\[T = \frac{\overline{D}-\mu_D}{S_D/\sqrt{n}} = -106.430626\]
+		\[P(T < t_c) = 0.05\]  	
+	\end{minipage}  
+	\begin{minipage}[t]{0.49\textwidth}
+		\centering
+		\small  	
+		\begin{tabular}{l}
+			$n = 4541$ \\
+			$\overline{D} = -1.077459$ \\  	  
+			$\alpha = 0.05$ \\
+			$t_c = -1.645$ (\textit{t}-Student) \\
+		\end{tabular}
+		\newline \newline 
+		\newline \newline 
+		\newline \newline
+		$H_o$ rejected due to $T < t_c$.
+		\newline
+		$H_a$ accepted, c-M2DP is faster than CSHOT.  	
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{KITTI 06 - Downsampled res x 5}
+	\scriptsize
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res5/precisionrecall_kitti06_lidar_camera_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res5/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res5/precisionrecall_kitti06_lidar_camera_cshot.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Camera-LIDAR fusion.}
+		\end{figure}  	
+	\end{minipage}  	
+	\begin{minipage}[t]{0.49\textwidth}  
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res5/precisionrecall_kitti06_stereo_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res5/precisionrecall_kitti06_stereo_cshot.csv"};	
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res5/precisionrecall_kitti06_stereo_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Stereo camera.}    
+		\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{KITTI 06 - Downsampled res x 10}
+	\scriptsize
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res10/precisionrecall_kitti06_lidar_camera_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res10/precisionrecall_kitti06_lidar_camera_cshot.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res10/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Camera-LIDAR fusion.}
+		\end{figure}  	
+	\end{minipage}  	
+	\begin{minipage}[t]{0.49\textwidth}  
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res10/precisionrecall_kitti06_stereo_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res10/precisionrecall_kitti06_stereo_cshot.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res10/precisionrecall_kitti06_stereo_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Stereo camera.}    
+		\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{KITTI 06 - Downsampled res x 15}
+	\scriptsize
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res15/precisionrecall_kitti06_lidar_camera_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res15/precisionrecall_kitti06_lidar_camera_cshot.csv"};	
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res15/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Camera-LIDAR fusion.}
+		\end{figure}  	
+	\end{minipage}  	
+	\begin{minipage}[t]{0.49\textwidth}  
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res15/precisionrecall_kitti06_stereo_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res15/precisionrecall_kitti06_stereo_cshot.csv"};	
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res15/precisionrecall_kitti06_stereo_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Stereo camera.}    
+		\end{figure}
+	\end{minipage}
+}
+
+\frame{
+	\frametitle{KITTI 06 - Downsampled res x 20}
+	\scriptsize
+	\begin{minipage}[t]{0.49\textwidth}
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res20/precisionrecall_kitti06_lidar_camera_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res20/precisionrecall_kitti06_lidar_camera_cshot.csv"};	
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/lidar_camera/res20/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Camera-LIDAR fusion.}
+		\end{figure}  	
+	\end{minipage}  	
+	\begin{minipage}[t]{0.49\textwidth}  
+		\begin{figure}
+			\begin{tikzpicture}
+			\begin{axis}[precision recall, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res20/precisionrecall_kitti06_stereo_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res20/precisionrecall_kitti06_stereo_cshot.csv"};	
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"data/stereo/res20/precisionrecall_kitti06_stereo_cm2dp.csv"};
+			\legend{M2DP, CSHOT, Our}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{Stereo camera.}    
+		\end{figure}
+	\end{minipage}
+}
+	
+\nocite{*}
+
+\end{document}
+
+
+
+

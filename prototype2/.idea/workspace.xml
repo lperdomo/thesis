@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="prototype2" targetName="prototype2" />
+      <config projectName="prototype2" targetName="prototype2_autogen" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="84e678ba-0578-4fcc-9590-58717f52ebe9" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FUSProjectUsageTrigger">
+    <session id="-467602230">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="m2dp.cc" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/m2dp.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="209" column="19" lean-forward="true" selection-start-line="209" selection-start-column="19" selection-end-line="209" selection-end-column="19" />
+              <folding>
+                <element signature="e#472#474#0" expanded="true" />
+                <element signature="e#526#528#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="normal.cc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/normal.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataset.cc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1020">
+              <caret line="68" column="24" selection-start-line="68" selection-start-column="2" selection-end-line="68" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pch.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pch.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pch.cc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pch.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="990">
+              <caret line="66" column="6" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filter.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/pcl-1.7/pcl/filters/filter.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1650">
+              <caret line="110" column="55" lean-forward="true" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
+              <folding>
+                <element signature="e#9032#9070#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pipeline.cc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pipeline.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3855">
+              <caret line="257" column="47" selection-start-line="257" selection-start-column="47" selection-end-line="257" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="descriptor.cc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/descriptor.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shot.cc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shot.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Method</find>
+      <find>covariance</find>
+      <find>normal_estimation_method_</find>
+      <find>verbose</find>
+      <find>std::cou</find>
+      <find>PointCloudOut</find>
+      <find>R</find>
+      <find>COSPAIR_features</find>
+      <find>computeCloudResolution</find>
+      <find>tree</find>
+      <find>spair_features</find>
+      <find>radius_</find>
+      <find>levelsize_total</find>
+      <find>histsize_total</find>
+      <find>histsize</find>
+      <find>histsize_rgb</find>
+      <find>levelsize</find>
+      <find>bef</find>
+      <find>cloud_</find>
+      <find>thetaList</find>
+      <find>knn</find>
+      <find>SetMask</find>
+      <find>global_</find>
+      <find>dataset_.si</find>
+      <find>output_</find>
+      <find>task_ =</find>
+      <find>file_</find>
+      <find>querie</find>
+      <find>candidate</find>
+      <find>----</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/feature.h" />
+        <option value="$PROJECT_DIR$/cloud.h" />
+        <option value="$PROJECT_DIR$/cloud.cc" />
+        <option value="$PROJECT_DIR$/cloudhelper.h" />
+        <option value="$PROJECT_DIR$/cloudhelper.cc" />
+        <option value="$PROJECT_DIR$/match.h" />
+        <option value="$PROJECT_DIR$/outlier.cc" />
+        <option value="$PROJECT_DIR$/score.cc" />
+        <option value="$PROJECT_DIR$/cospair.h" />
+        <option value="$PROJECT_DIR$/cospair.cc" />
+        <option value="$PROJECT_DIR$/keypoint.h" />
+        <option value="$PROJECT_DIR$/keypoint.cc" />
+        <option value="$PROJECT_DIR$/scorer.cc" />
+        <option value="$PROJECT_DIR$/scorer.h" />
+        <option value="$PROJECT_DIR$/output.h" />
+        <option value="$PROJECT_DIR$/output.cc" />
+        <option value="$PROJECT_DIR$/scene.h" />
+        <option value="$PROJECT_DIR$/scene.cc" />
+        <option value="$PROJECT_DIR$/window.h" />
+        <option value="$PROJECT_DIR$/window.cc" />
+        <option value="$PROJECT_DIR$/distances_view.h" />
+        <option value="$PROJECT_DIR$/distances_view.cc" />
+        <option value="$PROJECT_DIR$/distances_widget.cc" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/database.h" />
+        <option value="$PROJECT_DIR$/database.cc" />
+        <option value="$PROJECT_DIR$/input.cc" />
+        <option value="$PROJECT_DIR$/trajectory_widget.h" />
+        <option value="$PROJECT_DIR$/trajectory_widget.cc" />
+        <option value="$PROJECT_DIR$/shot.h" />
+        <option value="$PROJECT_DIR$/matcher.h" />
+        <option value="$PROJECT_DIR$/config.h" />
+        <option value="$PROJECT_DIR$/normal.h" />
+        <option value="$PROJECT_DIR$/main.cc" />
+        <option value="$PROJECT_DIR$/pipeline.h" />
+        <option value="$PROJECT_DIR$/m2dp.h" />
+        <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/util.cc" />
+        <option value="$PROJECT_DIR$/config.cc" />
+        <option value="$PROJECT_DIR$/dataset.h" />
+        <option value="$PROJECT_DIR$/matcher.cc" />
+        <option value="$PROJECT_DIR$/pipeline.cc" />
+        <option value="$PROJECT_DIR$/dataset.cc" />
+        <option value="$PROJECT_DIR$/m2dp.cc" />
+        <option value="$PROJECT_DIR$/descriptor.h" />
+        <option value="$PROJECT_DIR$/descriptor.cc" />
+        <option value="$PROJECT_DIR$/shot.cc" />
+        <option value="$PROJECT_DIR$/normal.cc" />
+        <option value="$PROJECT_DIR$/pch.h" />
+        <option value="$PROJECT_DIR$/pch.cc" />
+        <option value="$PROJECT_DIR$/util.h" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="380" />
+    <option name="y" value="176" />
+    <option name="width" value="639" />
+    <option name="height" value="668" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="prototype2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prototype2" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cospair" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.prototype2">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="prototype2" RUN_TARGET_NAME="prototype2" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <configuration name="prototype2" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../config.xml" PASS_PARENT_ENVS_2="true" PROJECT_NAME="prototype2" TARGET_NAME="prototype2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="prototype2" RUN_TARGET_NAME="prototype2" />
+    <configuration name="prototype2_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="prototype2" TARGET_NAME="prototype2_autogen" CONFIG_NAME="Debug" />
+    <list>
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.prototype2" />
+      <item itemvalue="Application.prototype2_autogen" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84e678ba-0578-4fcc-9590-58717f52ebe9" name="Default" comment="" />
+      <created>1521560148635</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1521560148635</updated>
+      <workItem from="1521560150559" duration="9907000" />
+      <workItem from="1521638985059" duration="4762000" />
+      <workItem from="1521649326351" duration="7008000" />
+      <workItem from="1521724639577" duration="11027000" />
+      <workItem from="1521815697939" duration="401000" />
+      <workItem from="1521816209923" duration="3000" />
+      <workItem from="1521817799560" duration="5000" />
+      <workItem from="1521828396595" duration="1413000" />
+      <workItem from="1521831062959" duration="8594000" />
+      <workItem from="1522008140865" duration="90000" />
+      <workItem from="1522024509579" duration="1198000" />
+      <workItem from="1522070584742" duration="1237000" />
+      <workItem from="1522076654629" duration="7757000" />
+      <workItem from="1522084945361" duration="211000" />
+      <workItem from="1522085270606" duration="2722000" />
+      <workItem from="1522088170985" duration="2477000" />
+      <workItem from="1522156156548" duration="4598000" />
+      <workItem from="1522244227899" duration="7929000" />
+      <workItem from="1522260157466" duration="156000" />
+      <workItem from="1522260353900" duration="2018000" />
+      <workItem from="1522262397295" duration="864000" />
+      <workItem from="1522263301196" duration="243000" />
+      <workItem from="1522285381651" duration="603000" />
+      <workItem from="1522288119668" duration="4057000" />
+      <workItem from="1522293923996" duration="262000" />
+      <workItem from="1522294251765" duration="707000" />
+      <workItem from="1522295462411" duration="1267000" />
+      <workItem from="1522336681668" duration="129000" />
+      <workItem from="1522336829386" duration="7702000" />
+      <workItem from="1522677196034" duration="2610000" />
+      <workItem from="1522762368677" duration="598000" />
+      <workItem from="1522849379049" duration="1443000" />
+      <workItem from="1522936931958" duration="1198000" />
+      <workItem from="1523372905287" duration="9913000" />
+      <workItem from="1523452965414" duration="13850000" />
+      <workItem from="1523490961504" duration="1253000" />
+      <workItem from="1523495120324" duration="2534000" />
+      <workItem from="1523540569227" duration="26000" />
+      <workItem from="1523540611353" duration="13793000" />
+      <workItem from="1523631170790" duration="8311000" />
+      <workItem from="1523645827262" duration="3993000" />
+      <workItem from="1523652239409" duration="6946000" />
+      <workItem from="1523728352612" duration="12813000" />
+      <workItem from="1523756643473" duration="7336000" />
+      <workItem from="1523803389308" duration="16533000" />
+      <workItem from="1523827458366" duration="2529000" />
+      <workItem from="1523830341027" duration="2876000" />
+      <workItem from="1523833571558" duration="1326000" />
+      <workItem from="1523841033705" duration="5817000" />
+      <workItem from="1523885069955" duration="151000" />
+      <workItem from="1523885242513" duration="957000" />
+      <workItem from="1523886230373" duration="6583000" />
+      <workItem from="1523933752899" duration="2072000" />
+      <workItem from="1524058904897" duration="4357000" />
+      <workItem from="1524675845174" duration="28000" />
+      <workItem from="1524676204025" duration="623000" />
+      <workItem from="1524676845847" duration="311000" />
+      <workItem from="1524677241133" duration="7000" />
+      <workItem from="1524678016011" duration="627000" />
+      <workItem from="1524678660861" duration="139000" />
+      <workItem from="1524678820163" duration="2020000" />
+      <workItem from="1524756489150" duration="12237000" />
+      <workItem from="1524945728765" duration="9411000" />
+      <workItem from="1525183828339" duration="1187000" />
+      <workItem from="1525186019532" duration="1919000" />
+      <workItem from="1525199352138" duration="10537000" />
+      <workItem from="1525391682623" duration="1251000" />
+      <workItem from="1525528479394" duration="599000" />
+      <workItem from="1525531188170" duration="363000" />
+      <workItem from="1525551144054" duration="720000" />
+      <workItem from="1525706265751" duration="21000" />
+      <workItem from="1525707051640" duration="1598000" />
+      <workItem from="1525709821080" duration="5559000" />
+      <workItem from="1525719454475" duration="226000" />
+      <workItem from="1525786997689" duration="3841000" />
+      <workItem from="1525799270393" duration="4277000" />
+      <workItem from="1525872725489" duration="10861000" />
+      <workItem from="1525959986851" duration="2521000" />
+      <workItem from="1526311834359" duration="82000" />
+      <workItem from="1526315028876" duration="6005000" />
+      <workItem from="1526396849159" duration="9890000" />
+      <workItem from="1526477648418" duration="4405000" />
+      <workItem from="1526485400774" duration="7530000" />
+      <workItem from="1526563434100" duration="13643000" />
+      <workItem from="1526909475915" duration="26000" />
+      <workItem from="1526909521907" duration="94000" />
+      <workItem from="1526909634120" duration="14591000" />
+      <workItem from="1526996408341" duration="11964000" />
+      <workItem from="1527088203893" duration="7628000" />
+      <workItem from="1527186532472" duration="600000" />
+      <workItem from="1527187191236" duration="257000" />
+      <workItem from="1528118114685" duration="16930000" />
+      <workItem from="1528204832606" duration="172000" />
+      <workItem from="1528205029576" duration="11409000" />
+      <workItem from="1528291763202" duration="79000" />
+      <workItem from="1528291867428" duration="124000" />
+      <workItem from="1528292015430" duration="1432000" />
+      <workItem from="1528299137289" duration="82000" />
+      <workItem from="1528303812145" duration="598000" />
+      <workItem from="1530031286083" duration="2373000" />
+      <workItem from="1530107842809" duration="7800000" />
+      <workItem from="1530193837684" duration="6656000" />
+      <workItem from="1530550917135" duration="669000" />
+      <workItem from="1530551791239" duration="25000" />
+      <workItem from="1530551836928" duration="5848000" />
+      <workItem from="1530625751555" duration="12853000" />
+      <workItem from="1530711420203" duration="4000" />
+      <workItem from="1530711544393" duration="9131000" />
+      <workItem from="1530799126426" duration="11075000" />
+      <workItem from="1531148799521" duration="622000" />
+      <workItem from="1531149738984" duration="12748000" />
+      <workItem from="1531229907286" duration="13190000" />
+      <workItem from="1531315207351" duration="14329000" />
+      <workItem from="1531403057173" duration="8577000" />
+      <workItem from="1531749175272" duration="16000" />
+      <workItem from="1531749209069" duration="52000" />
+      <workItem from="1531749279671" duration="11343000" />
+      <workItem from="1531763402719" duration="3944000" />
+      <workItem from="1531920927014" duration="11977000" />
+      <workItem from="1532006300073" duration="14662000" />
+      <workItem from="1532351747345" duration="16619000" />
+      <workItem from="1532439751462" duration="15030000" />
+      <workItem from="1532612471466" duration="11981000" />
+      <workItem from="1532957870374" duration="13544000" />
+      <workItem from="1533044623268" duration="13688000" />
+      <workItem from="1533215961217" duration="16601000" />
+      <workItem from="1533302643154" duration="7517000" />
+      <workItem from="1533562198096" duration="15711000" />
+      <workItem from="1533648998626" duration="12525000" />
+      <workItem from="1533736165913" duration="13627000" />
+      <workItem from="1533820732212" duration="10749000" />
+      <workItem from="1534166997120" duration="10871000" />
+      <workItem from="1534253842657" duration="10308000" />
+      <workItem from="1534346897805" duration="12025000" />
+      <workItem from="1534427176541" duration="7240000" />
+      <workItem from="1534769987729" duration="17131000" />
+      <workItem from="1534859274183" duration="7409000" />
+      <workItem from="1534944917247" duration="9481000" />
+      <workItem from="1535032494609" duration="14635000" />
+      <workItem from="1535382051698" duration="7703000" />
+      <workItem from="1535463597705" duration="12960000" />
+      <workItem from="1535550398042" duration="14651000" />
+      <workItem from="1535653334268" duration="2071000" />
+      <workItem from="1535982578338" duration="12977000" />
+      <workItem from="1536068672156" duration="10945000" />
+      <workItem from="1536154551328" duration="6469000" />
+      <workItem from="1536591942432" duration="10689000" />
+      <workItem from="1536672951039" duration="2180000" />
+      <workItem from="1536764087804" duration="603000" />
+      <workItem from="1536846533828" duration="11352000" />
+      <workItem from="1537196477674" duration="12977000" />
+      <workItem from="1537278764776" duration="10770000" />
+      <workItem from="1537364693609" duration="13014000" />
+      <workItem from="1537796809308" duration="11689000" />
+      <workItem from="1537883281101" duration="13857000" />
+      <workItem from="1537968996387" duration="12910000" />
+      <workItem from="1538056317222" duration="13243000" />
+      <workItem from="1538401943387" duration="9507000" />
+      <workItem from="1538488274531" duration="11515000" />
+      <workItem from="1538574665181" duration="12191000" />
+      <workItem from="1538661408396" duration="11691000" />
+      <workItem from="1539006103414" duration="12358000" />
+      <workItem from="1539097047429" duration="10211000" />
+      <workItem from="1539178463446" duration="9812000" />
+      <workItem from="1539610189681" duration="16582000" />
+      <workItem from="1539696545395" duration="4461000" />
+      <workItem from="1539796995106" duration="5719000" />
+      <workItem from="1539869558085" duration="13758000" />
+      <workItem from="1540215799759" duration="5614000" />
+      <workItem from="1540302637078" duration="4367000" />
+      <workItem from="1540388487688" duration="8527000" />
+      <workItem from="1540574155094" duration="60000" />
+      <workItem from="1540907691471" duration="5084000" />
+      <workItem from="1540992946032" duration="3229000" />
+      <workItem from="1541010128596" duration="204000" />
+      <workItem from="1541426148920" duration="4379000" />
+      <workItem from="1541508790599" duration="6812000" />
+      <workItem from="1541525620403" duration="989000" />
+      <workItem from="1541595279113" duration="11285000" />
+      <workItem from="1541685553901" duration="12769000" />
+      <workItem from="1542027231970" duration="12574000" />
+      <workItem from="1542119510141" duration="1944000" />
+      <workItem from="1542200442458" duration="11246000" />
+      <workItem from="1542632403348" duration="3623000" />
+      <workItem from="1542647808004" duration="2415000" />
+      <workItem from="1542717352374" duration="10097000" />
+      <workItem from="1542804665058" duration="4256000" />
+      <workItem from="1542818912820" duration="3997000" />
+      <workItem from="1542896736356" duration="1488000" />
+      <workItem from="1543236111602" duration="13841000" />
+      <workItem from="1543326872163" duration="14142000" />
+      <workItem from="1543409234391" duration="14913000" />
+      <workItem from="1543496155707" duration="2204000" />
+      <workItem from="1544019900874" duration="1421000" />
+      <workItem from="1544446758212" duration="6113000" />
+      <workItem from="1544532783048" duration="1815000" />
+      <workItem from="1544619172310" duration="1306000" />
+      <workItem from="1544704925406" duration="599000" />
+      <workItem from="1545066194886" duration="1378000" />
+      <workItem from="1545136760788" duration="816000" />
+      <workItem from="1545222716833" duration="1802000" />
+      <workItem from="1545842146391" duration="6250000" />
+      <workItem from="1545856901840" duration="6531000" />
+      <workItem from="1545915408485" duration="2486000" />
+      <workItem from="1545919712744" duration="651000" />
+      <workItem from="1545926429480" duration="1730000" />
+      <workItem from="1545929195438" duration="192000" />
+      <workItem from="1545939303920" duration="14252000" />
+      <workItem from="1545966101879" duration="373000" />
+      <workItem from="1546089026531" duration="597000" />
+      <workItem from="1546263747420" duration="2291000" />
+      <workItem from="1546436812955" duration="11100000" />
+      <workItem from="1546467198320" duration="1682000" />
+      <workItem from="1546470649246" duration="569000" />
+      <workItem from="1546531994242" duration="4817000" />
+      <workItem from="1546864966946" duration="702000" />
+      <workItem from="1546865859489" duration="612000" />
+      <workItem from="1546950368535" duration="62000" />
+      <workItem from="1547555741439" duration="375000" />
+      <workItem from="1547566195778" duration="7900000" />
+      <workItem from="1548175798638" duration="2975000" />
+      <workItem from="1548332491465" duration="2221000" />
+      <workItem from="1549457974995" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1332898000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="64" y="-11" width="1297" height="780" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22877358" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49921384" weight="0.32970452" />
+      <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.49842766" weight="0.28460342" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5031447" side_tool="true" weight="0.30482116" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32970452" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39968896" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info active="true" anchor="bottom" id="Messages" order="9" sideWeight="0.4972973" visible="true" weight="0.33903578" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49921384" weight="0.3281493" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="9" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/keypoint.h" />
+    <entry file="file:///usr/include/pcl-1.7/pcl/impl/point_types.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18300">
+          <caret line="1220" column="27" selection-start-line="1220" selection-start-column="27" selection-end-line="1220" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scorer.h" />
+    <entry file="file:///usr/include/boost/smart_ptr/make_shared_object.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="253" selection-start-line="253" selection-end-line="253" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cospair.cc" />
+    <entry file="file:///usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11625">
+          <caret line="775" column="17" selection-start-line="775" selection-start-column="9" selection-end-line="775" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/opencv2/calib3d/calib3d.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-174">
+          <caret line="685" column="19" selection-start-line="685" selection-start-column="19" selection-end-line="685" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4245">
+          <caret line="283" selection-start-line="283" selection-end-line="283" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/distances_widget.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scene.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scene.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/distances_widget.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6915">
+          <caret line="461" column="9" selection-start-line="461" selection-start-column="9" selection-end-line="461" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trajectory_widget.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trajectory_widget.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cospair.h" />
+    <entry file="file://$PROJECT_DIR$/scorer.cc" />
+    <entry file="file:///usr/include/boost/mpl/transform.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/pcl-1.7/pcl/common/impl/norms.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/basic_string.tcc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="215" selection-start-line="215" selection-end-line="215" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="743" selection-start-line="743" selection-end-line="743" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/src/Geometry/Quaternion.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-183">
+          <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/src/Core/Product.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shot.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matcher.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="109" column="13" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/pcl-1.7/pcl/point_types_conversion.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-82">
+          <caret line="102" column="2" selection-start-line="102" selection-start-column="2" selection-end-line="102" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/opencv2/core/core.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1063">
+          <caret line="2528" column="8" selection-start-line="2528" selection-start-column="8" selection-end-line="2528" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipeline.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matcher.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="103" column="3" selection-start-line="103" selection-start-column="3" selection-end-line="103" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="129" column="35" selection-start-line="129" selection-start-column="35" selection-end-line="129" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/descriptor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m2dp.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normal.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shot.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normal.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/descriptor.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pch.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/pcl-1.7/pcl/filters/filter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="110" column="55" lean-forward="true" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
+          <folding>
+            <element signature="e#9032#9070#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipeline.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3855">
+          <caret line="257" column="47" selection-start-line="257" selection-start-column="47" selection-end-line="257" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" column="24" selection-start-line="68" selection-start-column="2" selection-end-line="68" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pch.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="6" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m2dp.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="209" column="19" lean-forward="true" selection-start-line="209" selection-start-column="19" selection-end-line="209" selection-end-column="19" />
+          <folding>
+            <element signature="e#472#474#0" expanded="true" />
+            <element signature="e#526#528#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,3 @@
+/media/leo/7CA5D4323C92D667/workspace/rgbdfeatureprototypes/pclopenni/build/CMakeFiles/edit_cache.dir
+/media/leo/7CA5D4323C92D667/workspace/rgbdfeatureprototypes/pclopenni/build/CMakeFiles/rebuild_cache.dir
+/media/leo/7CA5D4323C92D667/workspace/rgbdfeatureprototypes/pclopenni/build/CMakeFiles/openniViewer.dir

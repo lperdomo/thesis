@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Introduction}{1}{0}{1}
+\beamer@sectionintoc {2}{Objective}{2}{0}{2}
+\beamer@sectionintoc {3}{Proposal}{3}{0}{3}
+\beamer@sectionintoc {4}{Development}{4}{0}{4}

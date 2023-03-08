@@ -1,0 +1,20 @@
+[dataset]
+width 160 #640
+height 120 #480
+size 1313
+path /home/phi/CLionProjects/rgbd_dataset_freiburg1_room/ #/media/leo/16E8689CE8687BBD1/workspace/rgbd_dataset_freiburg1_room/
+reference associate.txt
+[normal_estimation]
+max_depth_change_factor 0.02
+normal_smoothing_size 10.0
+[omp_segmentation]
+active 1
+min_inliers 95 #3000 #10000
+angular_threshold 0.069812 #0.034906
+distance_threshold 0.03 #0.02
+[ahc_segmentation]
+active 0
+refinement 1
+min_support 100
+window_width 5 
+window_height 5

@@ -1,0 +1,21 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Distance matrix}{1}{0}{1}
+\beamer@sectionintoc {2}{Distance matrix}{2}{0}{2}
+\beamer@sectionintoc {3}{Distance matrix}{3}{0}{3}
+\beamer@sectionintoc {4}{Distance matrix}{4}{0}{4}
+\beamer@sectionintoc {5}{Distance matrix}{5}{0}{5}
+\beamer@sectionintoc {6}{Distance matrix}{6}{0}{6}
+\beamer@sectionintoc {7}{Distance matrix}{7}{0}{7}
+\beamer@sectionintoc {8}{Distance matrix}{8}{0}{8}
+\beamer@sectionintoc {9}{Distance matrix}{9}{0}{9}
+\beamer@sectionintoc {10}{Distance matrix}{10}{0}{10}
+\beamer@sectionintoc {11}{Distance matrix}{11}{0}{11}
+\beamer@sectionintoc {12}{Distance matrix}{12}{0}{12}
+\beamer@sectionintoc {13}{Distance matrix}{13}{0}{13}
+\beamer@sectionintoc {14}{Distance matrix}{14}{0}{14}
+\beamer@sectionintoc {15}{Distance matrix}{15}{0}{15}
+\beamer@sectionintoc {16}{Distance matrix}{16}{0}{16}
+\beamer@sectionintoc {17}{Distance matrix}{17}{0}{17}
+\beamer@sectionintoc {18}{Distance matrix}{18}{0}{18}
+\beamer@sectionintoc {19}{Stereo Matching}{19}{0}{19}
+\beamer@sectionintoc {20}{Result}{20}{0}{20}

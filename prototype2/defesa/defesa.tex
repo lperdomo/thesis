@@ -1,0 +1,1226 @@
+%% example.tex
+%% Copyright 2012 Bruno Menegola
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status ‘maintained’.
+%
+% The Current Maintainer of this work is Bruno Menegola.
+%
+% This work consists of all files listed in MANIFEST
+%
+%
+% Description
+% ===========
+%
+% This is an example latex document to build presentation slides based on
+% the beamer class using the Inf theme.
+
+\documentclass{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{appendixnumberbeamer}
+
+%\usepackage{bibentry}
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% pacote para usar citações abnt
+
+\definecolor{orange}{RGB}{230, 159, 0}
+\definecolor{skyblue}{RGB}{86, 180, 233}
+\definecolor{purple}{RGB}{204, 121, 167}
+\definecolor{red}{RGB}{228, 26, 28}
+\definecolor{green}{RGB}{166, 216, 84}
+\definecolor{bluish}{RGB}{102,194,165}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{grey}{RGB}{128,128,128}
+\definecolor{roboticsred}{RGB}{255, 22, 0}
+\definecolor{roboticsgreen}{RGB}{56, 159, 0}
+\definecolor{roboticsblue}{RGB}{86, 180, 233}
+
+\pgfplotsset{
+	precision recall color/.style={
+		width=\textwidth, 
+		height=\textwidth,
+		grid=major,
+		grid style={dashed, gray!30},
+		xtick={0, 0.2, 0.4, 0.6, 0.8, 1},
+		xlabel near ticks,
+		xlabel=Recall,
+		xlabel style={font=\footnotesize},
+		ytick={0, 0.2, 0.4, 0.6, 0.8, 1},
+		ylabel=Precision,
+		ylabel style={font=\footnotesize, yshift=-0.3cm},		
+		legend style={font=\tiny},
+		legend cell align={left},
+		cycle list={
+			{color=bluish, line width=1pt, mark=none, mark options={line width=1pt, draw=bluish, fill=bluish, scale=1.5}},
+			{color=green, line width=1pt, mark=none, mark options={line width=1pt, draw=green, fill=green, scale=1.5}},
+			{color=red, line width=1pt, mark=none, mark options={line width=1pt, draw=red, fill=red, scale=1.5}},								
+		}
+	}
+}
+
+\pgfplotsset{
+	precision recall normal/.style={
+		width=\textwidth, 
+		height=\textwidth,
+		grid=major,
+		grid style={dashed, gray!30},
+		xtick={0, 0.2, 0.4, 0.6, 0.8, 1},
+		xlabel near ticks,
+		xlabel=Recall,
+		xlabel style={font=\footnotesize},
+		ytick={0, 0.2, 0.4, 0.6, 0.8, 1},
+		ylabel=Precision,	
+		ylabel style={font=\footnotesize, yshift=-0.3cm},	
+		legend style={font=\tiny},
+		legend cell align={left},
+		cycle list={
+			{color=orange, line width=1pt, mark=none, mark options={line width=1pt, draw=orange, fill=orange, scale=1.5}},
+			{color=purple, line width=1pt, mark=none, mark options={line width=1pt, draw=purple, fill=purple, scale=1.5}},
+			{color=skyblue, line width=1pt, mark=none, mark options={line width=1pt, draw=skyblue, fill=skyblue, scale=1.5}},								
+		}
+	}
+}
+
+% Choose the Inf theme
+\usetheme{Inf}
+
+\begin{document}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\setbeamertemplate{footline}{}
+% Define the title with \title[short title]{long title}
+% Short title is optional
+\title[]{\MakeLowercase{c}-M2DP: A Fast Point Cloud Descriptor with Color Information to Perform Loop Closure Detection}
+
+% Optional subtitle
+%\subtitle{Congresso XYZ}
+
+\date{November, 2019}
+
+% Author information
+\author{Leonardo Perdomo \\
+	\small Edson Prestes e Silva Junior}
+\institute{Instituto de Informática --- UFRGS}
+
+
+
+% Command to create title page
+\InfTitlePage
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\setbeamertemplate{footline}{\raisebox{9pt}{%
+		\makebox[\paperwidth]{%
+			\scriptsize\hfill\insertframenumber/\inserttotalframenumber\hspace{6pt}
+		}
+	}}
+
+\section{Introduction}
+
+\frame{
+    \frametitle{Autonomous Robots}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+		    \begin{itemize}
+		    	\justifying
+		    	\item Several examples of recent autonomous robots applications;  	
+		    	\item Perform tasks in distinct real-world environments:
+  			    \begin{itemize}
+   			    	\justifying
+   			    	\item Simultaneous Localization and Mapping (SLAM).
+			    \end{itemize}
+		    \end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\begin{center}
+				\begin{figure}[ht]
+					\centering
+					\label{figure:fig1}
+					\includegraphics[scale=0.35, height=60pt, width=80pt]{vehicle}
+					\includegraphics[scale=0.35, height=60pt, width=80pt]{construction}
+					
+					\includegraphics[scale=0.35, height=60pt, width=80pt]{drone}
+					\includegraphics[scale=0.35, height=60pt, width=80pt]{warehouse}
+					
+					\caption{\centering \footnotesize Self-driving, inspection, delivery, retail, among others.}
+				\end{figure}
+			\end{center}
+		\end{column}
+	\end{columns}    
+}
+
+\frame{
+	\frametitle{SLAM}
+	%\begin{columns}
+		%\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\justifying
+				\item Estimates its own pose and incrementally builds an map, using sensor measurements and odometry while moving in the environment.  
+			\end{itemize}
+		%falar da imagem			
+		%\end{column}
+		%\begin{column}{0.5\textwidth}  %%<--- here
+			\begin{center}
+				\begin{figure}[ht]
+					\label{figure:fig2}
+					%\input{slam-graphical.tex}
+					\input{slam-example.tex}
+					\caption{\centering \footnotesize Example of the SLAM problem (DURRANT-WHYTE; BAILEY, 2006)}.	
+				\end{figure}
+			\end{center}
+		%\end{column}
+	%\end{columns}    
+}
+
+\frame{
+	\frametitle{Loop Closure Detection}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\justifying
+				\item Estimation errors accumulated during movement increase the pose uncertainty and drifting;
+				\item Recognize previously visited places, reducing uncertainty and updating the map.
+			\end{itemize}
+		\end{column}
+		%falar da imagem
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\begin{center}
+				\begin{figure}
+					\label{figure:fig3}
+					\includegraphics[scale=0.35, height=80pt, width=110pt]{maperrors2.pdf}
+					
+					\caption{\centering \footnotesize Map built using only odometry (CADENA et al., 2016).}
+				\end{figure}
+			\end{center}
+		\end{column}
+	\end{columns}    
+}
+
+\frame{
+	\frametitle{How to detect loop closures?}
+	\begin{itemize}
+		\justifying
+		\item Correspondence search using appearance signatures from places visited during the trajectory;
+		\item Signatures can be built using shape, color and other data available from sensors:
+		\begin{itemize}
+			\justifying
+			\item Several visual-based methods\footnote[frame]{\tiny (CUMMINS; NEWMAN, 2008; MILFORD; WYETH, 2012; LOWRY et al., 2016)} for cameras developed over the past years;
+			\item 3D LIDAR-based methods are considered less mature\footnote[frame]{\tiny (HE; WANG; ZHANG, 2016; DUB{\'E} et al., 2017)}.		
+		\end{itemize}
+	\end{itemize}
+}
+%%PENSAR EM COMO APRESENTAR A CONEXÃO DO SLIDE ACIMA PARA O DE BAIXO
+\frame{
+	\frametitle{Point Cloud Descriptors}
+	\begin{itemize}
+		\justifying
+		\item Typically, loop closure detection with 3D LIDARs employ point cloud matching approaches\footnote[frame]{\tiny (BOSSE; ZLOT, 2013; CIESLEWSKI et al., 2016; HE; WANG; ZHANG, 2016)} using feature descriptors:
+		\begin{itemize}
+			\justifying
+			\item Global descriptors represent the entire cloud geometry into a single descriptor;
+			\item Local descriptors compute the characteristics around multiple keypoints:
+			\begin{itemize}
+				\justifying
+				\item Quality and performance issues with keypoint detection techniques\footnote[frame]{\tiny (DUBÉ et al., 2017)}.	
+			\end{itemize}					
+		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Multiview 2D Projection (M2DP)}
+	\begin{itemize}
+		\justifying
+		\item Recently, the M2DP\footnote[frame]{\tiny (HE; WANG; ZHANG, 2016)} descriptor presented significant results when applied to loop closure detection:
+		\begin{itemize}
+			\justifying  
+			\item Outperforms other descriptors, such as SHOT\footnote[frame]{\tiny (TOMBARI; SALTI; STEFANO, 2011)}'s global variant;			
+			\item Avoids using normals, which can be costly to estimate for large clouds;
+			\item Spatial density distributions are computed from multiple 2D projections of a point cloud;
+		\end{itemize}
+		\item We noticed that it could be extended to compute additional information from each projection.
+		%\item Detecting loop closures comes down to finding the most similar descriptors, using the $L2$ norm.		
+	\end{itemize}
+}
+
+\section{Proposal}
+\frame{
+	\frametitle{Combining Color and Shape}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\justifying
+				\item Alongside 3D spatial data, color can provide more descriptive scenes:
+				\begin{itemize}
+					\justifying
+					\item Object recognition works\footnote[frame]{\tiny (TOMBARI; SALTI; STEFANO, 2011; FENG; LIU; LIAO, 2015; LOGOGLU; KALKAN; TEMIZEL, 2016)} report increase in descriptiveness;
+					\item Insufficiently investigated approach for loop closure detection.
+				\end{itemize}
+				%\item 3D spatial data can provide more descriptive scenes than only 2D images;
+				%\item Sensor availability in recent bechmark platforms\footnote[frame]{\tiny (PANDEY; MCBRIDE; EUSTICE, 2011; GEIGER; LENZ; URTASUN, 2012)}.   
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\begin{center}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.35, height=50pt, width=\textwidth]{2_419lidar2.png}
+					
+					\includegraphics[scale=0.35, height=50pt, width=\textwidth]{3_419lidarcamera2.png}
+					
+					\caption{\centering \footnotesize Colored point cloud generated using LIDAR and camera.}
+					\label{fig:pointclouds}
+				\end{figure}
+			\end{center}
+		\end{column}
+	\end{columns}  
+}
+
+\frame{
+	\frametitle{Our Approach}
+	\centering
+	\large \textbf{Color M2DP (c-M2DP)}
+	\begin{itemize}
+		\justifying
+		\item A global descriptor comprising of color and shape data computed from the point cloud;
+		\item An improved loop closure detection, using the c-M2DP descriptor on point cloud sequences generated through camera-LIDAR fusion, or stereo depth estimation.
+		%falar da densidade
+	\end{itemize}
+}
+
+\section{Related Work}
+\frame{
+	\frametitle{Loop Closure Detection using Point Cloud Descriptors}
+	\begin{itemize}
+		\justifying
+		%\item Cylindrical support with radial, azimuthal and vertical splits;
+		\item Both avoid using normals, measuring point distributions from the point clouds; %from sparse (NBLD) or dense, but downsampled (3D Gestalt) clouds;
+		\item However, both are local descriptors, and compute only shape data from the cloud.
+		%\item Local, shape-only descriptors for dense, but downsampled (3D Gestalt), or sparse (NBLD) point clouds; 
+		%focar que não foram comparados por serem locais
+	\end{itemize}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}		
+		\begin{figure}
+			\vspace{-0.5em}
+			\label{figure:gestalt}
+			\includegraphics[height=80pt, width=0.8\textwidth]{gestalt.png}
+			\caption{\centering \footnotesize 3D Gestalt (BOSSE; ZLOT, 2013).}
+		\end{figure}
+	\end{column}	
+	\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{center}
+		\begin{figure}
+			\label{figure:nbld}
+			\includegraphics[height=80pt, width=0.8\textwidth]{nbld.png}
+			\caption{\centering \footnotesize NBLD (CIESLEWSKI et al., 2016).}
+		\end{figure}
+		\end{center}
+	\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Color and Shape Point Cloud Descriptors}	
+	\begin{itemize}
+		\justifying
+		\item Local descriptors designed for object recognition applications:
+		\begin{itemize}
+			\justifying
+			\item Histograms of normals and color characteristics are computed from a local support split in concentric spheres;		
+		\end{itemize}		
+		\item Additionally, CSHOT have a global variant that uses the whole cloud as support.
+		%\item Local, spherical support with radial splits around keypoints;
+		%\item Histograms of angular relations between surface normals, and color intensities;
+	\end{itemize}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}		
+	\begin{figure}
+		\label{figure:cshot}
+		\includegraphics[height=80pt, width=\textwidth]{cshot.png}
+		\caption{\centering \footnotesize CSHOT (TOMBARI; SALTI; STEFANO, 2011).}
+	\end{figure}
+	\end{column}	
+	\begin{column}{0.5\textwidth}  %%<--- here
+	\begin{center}
+	\begin{figure}
+		\vspace{-3em}
+		\label{figure:cospair}
+		\includegraphics[height=100pt, width=\textwidth]{cospair.png}
+		\caption{\centering \footnotesize CoSPAIR (LOGOGLU; KALKAN; TEMIZEL, 2016).}
+	\end{figure}
+	\end{center}
+	\end{column}
+	\end{columns}   
+}
+
+\section{c-M2DP}
+\frame{
+	\frametitle{Extending M2DP}
+	\begin{itemize}
+		\justifying
+		\item Our proposal takes advantage of M2DP's existing structure:
+		\begin{itemize}
+			\justifying
+			\item Reference frame, shape signatures, and dimensionality reduction steps remains unchanged;
+			\item Color signatures are computed alongside shape, from the multiple 2D projections;
+			\item Increased length of signature matrix and descriptor vector.
+		\end{itemize}			
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Reference Frame}
+	\begin{itemize}
+		\justifying
+		\item Point cloud $\boldsymbol{P}$ centroid is computed and used as the reference frame origin;
+		\item PCA is performed on $\boldsymbol{P}$, with the 1st and 2nd PCs defined as the $x$-axis and $y$-axis, respectively.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Multiple 2D Projections}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\justifying
+			\item Distinct 2D planes are generated by varying $[\theta, \phi]$;
+			\item  $\boldsymbol{P}$ is projected onto each 2D plane, in order to compute shape and color signatures from each 2D projection.
+		\end{itemize}
+	\end{column}
+	\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{center}
+		\begin{figure}[h!]
+			\centering
+			\vspace{-1em}
+			\input{projections.tex}
+			\vspace{-2em}
+			\caption{\centering \footnotesize Projecting $\boldsymbol{P}$ on multiple 2D planes.}
+			\label{fig:multiple-projections}	
+		\end{figure}
+		\end{center}
+	\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Shape Signature}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\justifying
+			\item Each plane is split into $l$ concentric circles;
+			\item Each concentric circle is divided in $h$ shape bins, indexed by the $x$-axis; 
+			\item Shape signature $\boldsymbol{s}^X$ is computed by counting the points within each bin.
+		\end{itemize}
+	\end{column}
+	\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{center}
+		\begin{figure}[h!]
+			\centering
+			\vspace{0.7cm}
+			%\includegraphics[height=7cm]{shapesignature2.pdf}
+			\input{shape-signature.tex}
+			\caption{\centering \footnotesize Computing the shape signature $\boldsymbol{s}^X$.}
+			\label{fig:shape-signature}	
+		\end{figure}
+		\end{center}
+	\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Color Signature}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\justifying
+			\item We build color histograms, in which each  channel is divided in $g$ bins;
+			\item Histograms are computed for every concentric circle, and are concatenated into a single color signature vector $\boldsymbol{c}^X$;
+		\end{itemize}
+	\end{column}
+	\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{center}
+		\begin{figure}[h!]
+			\centering
+			\vspace{0.7cm}
+			%\includegraphics[height=7cm]{shapesignature2.pdf}
+			\input{color-signature.tex}
+			\caption{\centering \footnotesize Computing the color signature $\boldsymbol{c}^X$.}
+			\label{fig:color-signature}	
+		\end{figure}
+		\end{center}
+	\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Signature Vector}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\justifying
+			\item Both $\boldsymbol{s}^X$ and $\boldsymbol{c}^X$ are normalized and concatenated into a single signature vector;
+			\item The signature matrix $\boldsymbol{A}$ is augmented by a row with the concatenated vector.
+		\end{itemize}
+	\end{column}
+	\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{center}
+		\begin{figure}[h!]
+			\centering
+			\vspace{0.7cm}
+			\input{projection-signature.tex}
+			\caption{\centering \footnotesize Concatenated shape and color signatures.}
+			\label{fig:projection-signature}	
+		\end{figure}
+		\end{center}
+	\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Dimensionality Reduction}
+	\begin{itemize}
+		\justifying
+		\item For every 2D projection, both shape and color signatures are computed, concatenated and included into $\boldsymbol{A}$;
+		\item SVD of $\boldsymbol{A}$ is computed, with the resulting 1st left and right singular vectors being concatenated and used as the final descriptor.
+	\end{itemize}
+}
+
+\section{Loop Closure Detection}
+\frame{
+	\frametitle{Pipeline}
+	\begin{itemize}
+		\justifying
+		\item Compute a descriptor for each point cloud and query them against the database:
+		\begin{itemize}
+			\justifying
+			\item Brute-force matching approach using the $L2$ norm;
+			%\item Current and adjacent frames are excluded to avoid self-queries;			
+			%pensar sobre como explicar essa janela (img, ...)
+			\item Detection comes down to finding the most similar descriptor under a predefined threshold (later used for PR curves).
+		\end{itemize}
+	\end{itemize}
+}
+
+\section{Dataset Sequences}
+\frame{
+	\frametitle{Point Clouds}
+	\begin{itemize}
+		\justifying			
+		\item KITTI\footnote[frame]{\tiny (GEIGER; LENZ; URTASUN, 2012)} sequences 00, 05, 06 and 07 were used:
+		\begin{itemize}
+			\justifying
+			\item 3D LIDAR with $360^{\circ}$ FoV, and a forward facing stereo color camera system, providing synchronized frames and rectified images;
+		\end{itemize}
+		\item For each sequence, we generated semi-dense and dense point clouds offline, using sensors readings and public available tools;		
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Camera-LIDAR Sensor Fusion}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\justifying
+			\item kitti\_lidar\_camera\footnote[frame]{\tiny https://github.com/LidarPerception/kitti\_lidar\_camera} package (ROS) was used:
+			\begin{itemize}
+				\justifying
+				\item LIDAR limited to forward facing FoV;  
+				\item 3D points were projected onto 2D image, associating color values.
+			\end{itemize}
+		\end{itemize}
+	\end{column}
+	\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{center}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[height=2cm, width=\textwidth]{lidarprojected.png}
+			\caption{\centering \footnotesize 3D LIDAR points projected on 2D image. Frame from the KITTI odometry dataset.}
+			\label{fig:camera-lidar-fusion}
+		\end{figure}
+		\end{center}
+	\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Stereo Depth Estimation}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\justifying
+			\item image\_undistort\footnote[frame]{\tiny https://github.com/ethz-asl/image\_undistort} package (ROS) was used:
+			\begin{itemize}
+				\justifying
+				\item Employs block matching technique from OpenCV\footnote[frame]{\tiny https://opencv.org/};
+				\item Point clouds generated using default parameters for KITTI sequences.
+			\end{itemize}
+		\end{itemize}
+	\end{column}
+	\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{center}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[height=2cm, width=\textwidth]{stereodepth.png}
+			\caption{\centering \footnotesize Depth estimated from stereo camera. Frame from the KITTI odometry dataset.}
+			\label{fig:stereo-depth}
+		\end{figure}
+		\end{center}
+	\end{column}
+	\end{columns}
+}
+
+\section{Experiments}
+\frame{
+	\frametitle{Our platform}
+	\begin{itemize}
+		\justifying
+		\item Laptop Intel i7 quad-core 2.00 GHz CPU and 8 GB RAM;
+		\item Both M2DP and c-M2DP were implemented in C++, using PCL\footnote[frame]{\tiny http://pointclouds.org} and Eigen\footnote[frame]{\tiny http://eigen.tuxfamily.org/};
+		\item In order to compare our results, we used the global variant of the CSHOT descriptor provided by PCL.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Parameters}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\justifying
+				\item M2DP and c-M2DP parameters were the same from original work;
+				%%PENSAR EM COMO APRESENTAR ISSO:
+				\item c-M2DP color bins parameter was set as $g = h$; % and $w = 3$ (RGB, HSV and CIELab); 
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\begin{center}
+				\begin{table}[h!]
+					\footnotesize
+					\centering
+					\caption{M2DP and c-M2DP Parameters}
+					\label{tab:settings}
+					\begin{tabularx}{\textwidth}{@{}lcc@{}}\hline
+						\textbf{Parameter} & \textbf{M2DP} & \textbf{c-M2DP} \\ \hline	
+						Azim. angles ($b$) & $4$ & $4$ \\
+						Elev. angles ($q$) & $16$ & $16$ \\	
+						Conc. circles ($l$) & $8$ & $8$ \\
+						Shape bins ($h$) & $16$ & $16$ \\ 
+						Color bins ($g$) & - & $16$ \\ \hline
+						\textbf{Vector length} & $192$ & $576$ \\ \hline
+					\end{tabularx}
+				\end{table}
+			\end{center}
+		\end{column}
+	\end{columns}	
+}	
+
+\frame{
+	\frametitle{Parameters}
+	\begin{itemize}
+		\justifying
+		\item CSHOT default parameters from PCL (vector length: $1344$);
+		\item Normals are estimated for CSHOT using the neighborhood around each point, requiring a radius parameter:
+		\begin{itemize}
+			\justifying
+			\item It can be insufficient, generating invalid results, or be a costly process due to the amount of points; 
+			\item Before each sequence, using the 1st frame:
+			\begin{itemize}
+				\justifying
+				\item Radius was set as 5 times the average distance of the nearest point.
+			\end{itemize}
+		\end{itemize}			
+	\end{itemize}
+}	
+
+%\frame{
+	%\frametitle{Parameters}
+	%\begin{itemize}
+		%\justifying
+		%\item In the loop closure detection pipeline, parameters were the same from original work:
+		%\begin{itemize}
+			%\justifying		
+			%\item Self-queries are avoided using $\pm50$ window;
+			%\item Two locations are considered as the ground truth loop closure if their distance is $<10m$.
+			%A loop closure is considered correct if the matched point clouds are $<10m$ from each other in the ground-truth trajectory.
+			%\item Detected loop closures are considered ground-truth if $<10m$ of the exact location in the trajectory.			
+		%\end{itemize}
+	%\end{itemize}
+%}	
+
+\frame{
+	\frametitle{Evaluation}
+	\begin{itemize}
+		\justifying
+		\item Times to compute each descriptor and perform the matching process were measured;
+		\item Precision-recall curves were generated by varying the descriptor similarity threshold:
+		\begin{itemize}
+			\justifying
+			\item Two locations are considered as the ground truth loop closure if their distance is $<10m$;
+		\end{itemize}
+		%\begin{itemize}
+		%	\justifying
+		%	\item Loop closures are considered GT if $<10m$ in the trajectory;						
+		%\end{itemize}
+		\item Recall rates at $100\%$ precision are highlighted:
+		\begin{itemize}
+			\justifying
+			\item False loop closures are catastrophic for the map building and can be irrecoverable for SLAM.
+		\end{itemize}					
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Evaluation}
+	\begin{itemize}
+		\justifying
+		\item At first, we evaluated each descriptor with semi-dense clouds, generated through camera-LIDAR fusion;
+		\item After that, we experimented with more dense clouds, generated through stereo depth estimation.		
+		%\item We evaluated each descriptor while using point clouds with distinct densities:
+		%\begin{itemize}
+			%\justifying
+			%\item At first, our experiments were done with semi-dense clouds, generated through camera-LIDAR fusion;
+			%\item Our first experiments were done using point clouds sequences generated through camera-LIDAR fusion;
+			%\item After that, we experimented using c-M2DP and M2DP with more dense clouds, generated through depth estimation.
+			%\item We also evaluate c-M2DP and M2DP using stereo-based sequences:
+			%\item In stereo-based sequences:
+			
+			%\item Evaluate M2DP and c-M2DP results for point clouds generated using a different sensor;
+			%\item CSHOT was expected to have better accuracy, but at higher computational costs.
+		%\end{itemize}		
+	\end{itemize}		
+}
+
+\section{Results}
+\frame{
+	\frametitle{\MakeLowercase{c}-M2DP Color Space}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\justifying
+				\item c-M2DP color space was chosen after evaluating it using RGB, HSV and CIELab.
+				\begin{table}[h!]
+					\footnotesize
+					\label{tab:100colorspaces}
+					\begin{tabularx}{\textwidth}{@{}lcc@{}}\hline
+						\textbf{Color Space} & 
+						\multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}c}{\textbf{Recall Rates}} \\
+						& \textbf{Pr. $\mathbf{100\%}$} & \textbf{Pr. $\mathbf{90\%}$} \\ \hline	
+						RGB & $\mathbf{82.5\%}$ & $89.2\%$ \\
+						HSV & $71.4\%$ & $91.5\%$ \\	
+						CIELab & $49.8\%$ & $86.8\%$ \\ \hline
+					\end{tabularx}
+				\end{table}
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\begin{center}
+				\begin{figure}[h!]
+					\centering
+					\begin{tikzpicture}
+					\begin{axis}[precision recall color, legend pos=south west]
+					\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/cm2dp/lab/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};
+					\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/cm2dp/hsv/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};
+					\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/cm2dp/rgb/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};
+					\legend{Lab, HSV, RGB}
+					\end{axis}
+					\end{tikzpicture}
+					\caption{\centering \footnotesize KITTI 06 camera-LIDAR.}
+					\label{fig:color-spaces}	
+				\end{figure}
+			\end{center}
+		\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Time Efficiency}
+	\begin{itemize}
+		\justifying
+		\item In camera-LIDAR sequences:
+		\begin{itemize}
+			\justifying		
+			\item c-M2DP computing time is only $\mathbf{23.2}\%$ higher than M2DP; 
+			\item c-M2DP is $\mathbf{22.6}\%$ faster to compute than CSHOT.
+		\end{itemize}
+	\end{itemize}
+	\begin{center}
+		\begin{table}[h!]
+			\centering
+			\footnotesize
+			%\caption{Average times computing and matching a descriptor.}
+			\label{tab:times-camera-lidar}	
+			\begin{tabularx}{\textwidth}{@{}XXX@{}}\hline
+				\textbf{Descriptor} & \textbf{Computing ($s$)} & \textbf{Matching ($s$)} \\ \hline
+				M2DP & $\mathbf{0.0674}\pm0.0041$ & $\mathbf{0.0043}\pm0.0004$ \\
+				c-M2DP* & $\mathbf{0.0830}\pm0.0052$ & $\mathbf{0.0051}\pm0.0006$ \\
+				CSHOT & $0.1072\pm0.0168$ & $0.0059\pm0.0005$ \\ \hline
+				\tiny *Ours
+			\end{tabularx}
+		\end{table}					
+	\end{center}	
+}
+
+\frame{
+	\frametitle{Precision-Recall Camera-LIDAR}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{table}[h!]
+				\footnotesize
+				\label{tab:100cameralidar06}
+				\begin{tabularx}{\textwidth}{@{}lcc@{}}\hline
+					\textbf{Descriptor} & 
+					\multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}c}{\textbf{Recall Rates}} \\
+					& \textbf{Pr. $\mathbf{100\%}$} & \textbf{Pr. $\mathbf{90\%}$} \\ \hline
+					c-M2DP* & $\mathbf{82.5\%}$ & $89.2\%$ \\
+					M2DP & $66.8\%$ & $82.1\%$ \\	
+					CSHOT & $81.9\%$ & $90.6\%$ \\ \hline
+					\tiny *Ours			
+				\end{tabularx}
+			\end{table}
+			\begin{figure}
+				\label{figure:cl06}
+				\includegraphics[height=100pt, width=0.8\textwidth]{06.png}
+			\end{figure}				
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\begin{center}
+				\begin{figure}[h!]
+					\centering
+					\begin{tikzpicture}
+					\begin{axis}[precision recall normal, legend pos=south west]
+					\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/m2dp/precisionrecall_kitti06_lidar_camera_m2dp.csv"};
+					\addplot+[] table [x=x, y=y, col sep=semicolon]
+					{"../paper/data/lidar_camera/cshot/precisionrecall_kitti06_lidar_camera_cshot.csv"};
+					\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/cm2dp/rgb/precisionrecall_kitti06_lidar_camera_cm2dp.csv"};  	
+					\legend{M2DP, CSHOT, c-M2DP}
+					\end{axis}
+					\end{tikzpicture}
+					\caption{\centering \footnotesize KITTI 06 camera-LIDAR.}
+					\label{fig:pr-camera-lidar-06}
+				\end{figure}				
+			\end{center}
+		\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Precision-Recall Camera-LIDAR}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{table}[h!]
+		\footnotesize
+		\label{tab:100cameralidar05}
+		\begin{tabularx}{\textwidth}{@{}lcc@{}}\hline
+			\textbf{Descriptor} & 
+			\multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}c}{\textbf{Recall Rates}} \\
+			& \textbf{Pr. $\mathbf{100\%}$} & \textbf{Pr. $\mathbf{90\%}$} \\ \hline	
+			c-M2DP* & $\mathbf{70.9\%}$ & $76.5\%$ \\
+			M2DP & $40.9\%$ & $78.2\%$ \\	
+			CSHOT & $\mathbf{70.8\%}$ & $83.5\%$ \\ \hline
+			\tiny *Ours
+		\end{tabularx}
+		\end{table}
+		\begin{figure}
+			\label{figure:cl05}
+			\includegraphics[height=100pt, width=0.8\textwidth]{05.png}
+		\end{figure}
+	\end{column}
+	\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{center}
+		\begin{figure}[h!]
+			\centering
+			\begin{tikzpicture}
+			\begin{axis}[precision recall normal, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/m2dp/precisionrecall_kitti05_lidar_camera_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon]
+			{"../paper/data/lidar_camera/cshot/precisionrecall_kitti05_lidar_camera_cshot.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/cm2dp/rgb/precisionrecall_kitti05_lidar_camera_cm2dp.csv"};  	
+			\legend{M2DP, CSHOT, c-M2DP}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{\centering \footnotesize KITTI 05 camera-LIDAR.}
+			\label{fig:pr-camera-lidar-05}
+		\end{figure}				
+		\end{center}
+	\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Precision-Recall Camera-LIDAR}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{table}[h!]
+				\footnotesize
+				\label{tab:100cameralidar00}
+				\begin{tabularx}{\textwidth}{@{}lcc@{}}\hline
+					\textbf{Descriptor} & 
+					\multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}c}{\textbf{Recall Rates}} \\
+					& \textbf{Pr. $\mathbf{100\%}$} & \textbf{Pr. $\mathbf{90\%}$} \\ \hline	
+					c-M2DP* & $67.3\%$ & $85.4\%$ \\
+					M2DP & $57.4\%$ & $78.2\%$ \\	
+					CSHOT & $\mathbf{79.2\%}$ & $88.6\%$ \\ \hline
+					\tiny *Ours
+				\end{tabularx}
+			\end{table}
+			\begin{figure}
+				\label{figure:cl00}
+				\includegraphics[height=100pt, width=0.8\textwidth]{00.png}
+			\end{figure}
+			
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\begin{center}
+				\begin{figure}[h!]
+					\centering
+					\begin{tikzpicture}
+					\begin{axis}[precision recall normal, legend pos=south west]
+					\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/m2dp/precisionrecall_kitti00_lidar_camera_m2dp.csv"};
+					\addplot+[] table [x=x, y=y, col sep=semicolon]
+					{"../paper/data/lidar_camera/cshot/precisionrecall_kitti00_lidar_camera_cshot.csv"};
+					\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/cm2dp/rgb/precisionrecall_kitti00_lidar_camera_cm2dp.csv"};  	
+					\legend{M2DP, CSHOT, c-M2DP}
+					\end{axis}
+					\end{tikzpicture}
+					\caption{\centering \footnotesize KITTI 00 camera-LIDAR.}
+					\label{fig:pr-camera-lidar-00}
+				\end{figure}				
+			\end{center}
+		\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Precision-Recall Camera-LIDAR}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{table}[h!]
+		\footnotesize
+		\label{tab:100cameralidar07}
+		\begin{tabularx}{\textwidth}{@{}XX@{}}\hline
+		\textbf{Descriptor} & \textbf{Recall Rates} \\
+		& \textbf{Pr. $\mathbf{100\%}$} \\ \hline	
+		c-M2DP* & $10.2\%$ \\
+		M2DP & - \\	
+		CSHOT & $\mathbf{17\%}$ \\ \hline
+		\tiny *Ours
+		\end{tabularx}
+		\end{table}
+		\begin{figure}
+			\label{figure:cl07}
+			\includegraphics[height=100pt, width=0.8\textwidth]{07.png}
+		\end{figure}				
+	\end{column}
+	\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{center}
+		\begin{figure}[h!]
+			\centering
+			\begin{tikzpicture}
+			\begin{axis}[precision recall normal, legend pos=north east]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/m2dp/precisionrecall_kitti07_lidar_camera_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/cshot/precisionrecall_kitti07_lidar_camera_cshot.csv"};			
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/lidar_camera/cm2dp/rgb/precisionrecall_kitti07_lidar_camera_cm2dp.csv"};
+			\legend{M2DP, CSHOT, c-M2DP}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{\centering \footnotesize KITTI 07 camera-LIDAR.}
+			\label{fig:pr-camera-lidar-07}
+		\end{figure}				
+		\end{center}
+	\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Time Efficiency}
+	\begin{itemize}
+		\justifying
+		\item In stereo sequences:
+		\begin{itemize}
+			\justifying			
+			\item Overall increase in the average times computing the descriptors;
+			\item c-M2DP computing time is only $\mathbf{18.8}\%$ higher than M2DP;
+			\item CSHOT heavy computational burden, with an average time $\mathbf{315.9}\%$ higher than c-M2DP. 
+			%\item with 1101 frames, considered to be the most challenging of them, due to two different segments with very similar structures:
+		\end{itemize}
+	\end{itemize}
+	\begin{center}
+		\begin{table}[h!]
+			\centering
+			\footnotesize
+			%\caption{Average times in seconds to compute a descriptor and matching on point clouds generated using stereo camera.}
+			\label{tab:times-stereo}	
+			\begin{tabularx}{\textwidth}{@{}XXX@{}}\hline
+				\textbf{Descriptor} & \textbf{Computing ($s$)} & \textbf{Matching ($s$)} \\ \hline
+				M2DP & $\mathbf{0.3584}\pm0.0816$ & $\mathbf{0.0044}\pm0.0008$ \\		
+				c-M2DP* & $\mathbf{0.4259}\pm0.0956$ & $\mathbf{0.0054}\pm0.0006$ \\
+				CSHOT & $1.7711\pm1.0159$ & $0.0061\pm0.0005$ \\ \hline
+				\tiny *Ours		
+			\end{tabularx}
+		\end{table}					
+	\end{center}	
+}
+
+\frame{
+	\frametitle{Precision-Recall Stereo}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{table}[h!]
+				\footnotesize
+				\label{tab:100stereo06}
+				\begin{tabularx}{\textwidth}{@{}lcc@{}}\hline
+					\textbf{Descriptor} & 
+					\multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}c}{\textbf{Recall Rates}} \\
+					& \textbf{Pr. $\mathbf{100\%}$} & \textbf{Pr. $\mathbf{90\%}$} \\ \hline	
+					c-M2DP* & $50.2\%$ & $82.2\%$ \\
+					M2DP & $22.8\%$ & $54.5\%$ \\	
+					CSHOT & $\mathbf{82.3\%}$ & $91.7\%$ \\ \hline
+					\tiny *Ours
+				\end{tabularx}
+			\end{table}
+			\begin{figure}
+				\label{figure:s06}
+				\includegraphics[height=100pt, width=0.8\textwidth]{06.png}
+			\end{figure}						
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\begin{center}
+				\begin{figure}[h!]
+					\centering
+					\begin{tikzpicture}
+					\begin{axis}[precision recall normal, legend pos=south west]
+					\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/stereo/m2dp/precisionrecall_kitti06_stereo_m2dp.csv"};
+					\addplot+[] table [x=x, y=y, col sep=semicolon]
+					{"../paper/data/stereo/cshot/precisionrecall_kitti06_stereo_cshot.csv"};
+					\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/stereo/cm2dp/rgb/precisionrecall_kitti06_stereo_cm2dp.csv"};  	
+					\legend{M2DP, CSHOT, c-M2DP}
+					\end{axis}
+					\end{tikzpicture}
+					\caption{\centering \footnotesize KITTI 06 stereo camera.}
+					\label{fig:pr-stereo-06}
+				\end{figure}				
+			\end{center}
+		\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Precision-Recall Stereo}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{table}[h!]
+		\footnotesize
+		\label{tab:100stereo05}
+		\begin{tabularx}{\textwidth}{@{}lcc@{}}\hline
+			\textbf{Descriptor} & 
+			\multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}c}{\textbf{Recall Rates}} \\
+			& \textbf{Pr. $\mathbf{100\%}$} & \textbf{Pr. $\mathbf{90\%}$} \\ \hline	
+			c-M2DP* & $69.2\%$ & $79.2\%$ \\
+			M2DP & $35.3\%$ & $64.9\%$ \\	
+			CSHOT & $\mathbf{77.9\%}$ & $87\%$ \\ \hline
+			\tiny *Ours
+		\end{tabularx}
+		\end{table}
+		\begin{figure}
+			\label{figure:s05}
+			\includegraphics[height=100pt, width=0.8\textwidth]{05.png}
+		\end{figure}						
+	\end{column}
+	\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{center}
+		\begin{figure}[h!]
+			\centering
+			\begin{tikzpicture}
+			\begin{axis}[precision recall normal, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/stereo/m2dp/precisionrecall_kitti05_stereo_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon]
+			{"../paper/data/stereo/cshot/precisionrecall_kitti05_stereo_cshot.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/stereo/cm2dp/rgb/precisionrecall_kitti05_stereo_cm2dp.csv"};  	
+			\legend{M2DP, CSHOT, c-M2DP}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{\centering \footnotesize KITTI 05 stereo camera.}
+			\label{fig:pr-stereo-05}
+		\end{figure}				
+		\end{center}
+	\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Precision-Recall Stereo}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{table}[h!]
+				\footnotesize
+				\label{tab:100stereo00}
+				\begin{tabularx}{\textwidth}{@{}lcc@{}}\hline
+					\textbf{Descriptor} & 
+					\multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}c}{\textbf{Recall Rates}} \\
+					& \textbf{Pr. $\mathbf{100\%}$} & \textbf{Pr. $\mathbf{90\%}$} \\ \hline
+					c-M2DP* & $69.8\%$ & $85.3\%$ \\
+					M2DP & $27\%$ & $63.2\%$ \\	
+					CSHOT & $\mathbf{70.9\%}$ & $92.2\%$ \\ \hline
+					\tiny *Ours
+				\end{tabularx}
+			\end{table}
+			\begin{figure}
+				\label{figure:s00}
+				\includegraphics[height=100pt, width=0.8\textwidth]{00.png}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\begin{center}
+				\begin{figure}[h!]
+					\centering
+					\begin{tikzpicture}
+					\begin{axis}[precision recall normal, legend pos=south west]
+					\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/stereo/m2dp/precisionrecall_kitti00_stereo_m2dp.csv"};
+					\addplot+[] table [x=x, y=y, col sep=semicolon]
+					{"../paper/data/stereo/cshot/precisionrecall_kitti00_stereo_cshot.csv"};
+					\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/stereo/cm2dp/rgb/precisionrecall_kitti00_stereo_cm2dp.csv"};  	
+					\legend{M2DP, CSHOT, c-M2DP}
+					\end{axis}
+					\end{tikzpicture}
+					\caption{\centering \footnotesize KITTI 00 stereo camera.}
+					\label{fig:pr-stereo-00}
+				\end{figure}				
+			\end{center}
+		\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Precision-Recall Stereo}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{table}[h!]
+		\footnotesize
+		\label{tab:100stereo07}
+		\begin{tabularx}{\textwidth}{@{}XX@{}}\hline
+			\textbf{Descriptor} & \textbf{Recall Rates} \\
+			& \textbf{Pr. $\mathbf{100\%}$} \\ \hline	
+			c-M2DP* & $37.2\%$ \\
+			M2DP & $15.9\%$ \\	
+			CSHOT & $\mathbf{44.2\%}$ \\ \hline
+			\tiny *Ours
+		\end{tabularx}
+		\end{table}
+		\begin{figure}
+			\label{figure:s07}
+			\includegraphics[height=100pt, width=0.8\textwidth]{07.png}
+		\end{figure}			
+	\end{column}
+	\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{center}
+		\begin{figure}[h!]
+			\centering
+			\begin{tikzpicture}
+			\begin{axis}[precision recall normal, legend pos=south west]
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/stereo/m2dp/precisionrecall_kitti07_stereo_m2dp.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon]
+			{"../paper/data/stereo/cshot/precisionrecall_kitti07_stereo_cshot.csv"};
+			\addplot+[] table [x=x, y=y, col sep=semicolon] {"../paper/data/stereo/cm2dp/rgb/precisionrecall_kitti07_stereo_cm2dp.csv"};  	
+			\legend{M2DP, CSHOT, c-M2DP}
+			\end{axis}
+			\end{tikzpicture}
+			\caption{\centering \footnotesize KITTI 07 stereo camera.}
+			\label{fig:pr-stereo-07}
+		\end{figure}				
+		\end{center}
+	\end{column}
+	\end{columns}	
+}
+
+\frame{
+	\frametitle{Conclusion}
+	\begin{itemize}
+		\justifying
+		\item Our proposal successfully incorporates color along shape data, extending the M2DP descriptor; 
+		\item We performed loop closure detection using c-M2DP:
+		\begin{itemize}
+			\justifying
+			\item Accuracy improvement over M2DP, while avoiding a large increase in time consumption;
+			\item Smaller, faster to compute, and shows competitive results against CSHOT in semi-dense point clouds;
+			\item Although dense point clouds were challenging for M2DP and c-M2DP, CSHOT higher accuracy comes at the cost of being several times slower than our proposal.
+		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Conclusion}
+	\begin{itemize}
+		\justifying
+		\item Our paper was accepted in IEEE CASE 2019.
+		\item In future works:
+		\begin{itemize}
+			\justifying
+			\item Evaluate performance using $360^{\circ}$ colored point clouds sequences\footnote[frame]{\tiny (PANDEY; MCBRIDE; EUSTICE, 2011)}, and on different environments\footnote[frame]{\tiny (BLANCO-CLARACO; MORENO-DUE{\~N}AS; GONZ{\'A}LEZ-JIM{\'E}NEZ, 2014)};
+			\item Investigate potential improvements for signatures, such as image pre-processing and point cloud sampling techniques.
+		\end{itemize}
+	\end{itemize}
+}		
+
+\section*{}
+
+\setbeamertemplate{footline}{}
+
+\appendix
+
+\begin{frame}
+    \frametitle{Obrigado!}
+    \InfContacts
+\end{frame}
+
+\frame{
+	\begin{itemize}
+	\justifying
+	\item Precision is the proportion of correctly detected loop closures (TP) among the total of detected loop closures (TP+FP);
+	\item Recall is the proportion of correctly detected loop closures (TP) among the actual loop closures in the sequence (TP+FN);
+	\end{itemize}
+}
+	
+\frame{
+	\begin{itemize}
+	\justifying	
+	\item Azimuth angles progression starts from $0$ with a stride of $\tfrac{\pi}{b}$;
+	\item Elevation angles progression starts from $0$ with a stride of $\tfrac{\pi}{2q}$;
+	\item Concentric circles are generated with varying radii $[r, 2^2r, \dots, l^2r]$, where $r$ is derived from the maximum radius, which is the distance between the farthest point of the cloud and the centroid.
+	\end{itemize}
+}
+
+\frame{
+	\begin{itemize}
+		\justifying	
+		\item PCA is a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called PCs:
+		\begin{itemize}
+			\justifying
+			\item The 1st PC has the largest possible variance, and each succeeding PC has the highest variance possible under the constraint that it is orthogonal to the preceding PC.
+		\end{itemize}
+		\item SVD is a factorization of a real or complex matrix:
+		\begin{itemize}
+			\justifying
+			\item In $\boldsymbol{A} = USV^T$, the columns of $U$ and the columns of $V$ are called the left-singular vectors and right-singular vectors of $\boldsymbol{A}$.
+		\end{itemize}		
+	\end{itemize}
+}
+
+\end{document}

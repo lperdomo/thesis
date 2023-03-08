@@ -1,0 +1,10 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Proposal}{9}{0}{2}
+\beamer@sectionintoc {3}{Related Work}{11}{0}{3}
+\beamer@sectionintoc {4}{c-M2DP}{13}{0}{4}
+\beamer@sectionintoc {5}{Loop Closure Detection}{20}{0}{5}
+\beamer@sectionintoc {6}{Dataset Sequences}{21}{0}{6}
+\beamer@sectionintoc {7}{Experiments}{24}{0}{7}
+\beamer@sectionintoc {8}{Results}{29}{0}{8}

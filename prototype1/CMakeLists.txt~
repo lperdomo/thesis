@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.9)
+project(prototype1)
+
+set(CMAKE_CXX_STANDARD 11)
+
+find_package(PCL 1.7 REQUIRED COMPONENTS common io visualization features filters segmentation)
+find_package(OpenCV REQUIRED)
+
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+
+add_executable(prototype1 main.cpp
+        Input.cpp Input.h Segmentation.cpp Segmentation.h Feature.cpp Feature.h)
+
+target_link_libraries(prototype1
+        ${PCL_COMMON_LIBRARIES}
+        ${PCL_IO_LIBRARIES}
+        ${PCL_VISUALIZATION_LIBRARIES}
+        ${PCL_FILTERS_LIBRARIES}
+        ${PCL_FEATURES_LIBRARIES}
+        ${PCL_SEGMENTATION_LIBRARIES}
+        ${OpenCV_LIBS})

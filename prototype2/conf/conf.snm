@@ -1,0 +1,14 @@
+\beamer@slide {fig:pointclouds}{2}
+\beamer@slide {fig:multiple-projections}{5}
+\beamer@slide {fig:shape-signature}{6}
+\beamer@slide {fig:color-signature}{7}
+\beamer@slide {fig:projection-signature}{8}
+\beamer@slide {tab:settings}{10}
+\beamer@slide {tab:100colorspaces}{11}
+\beamer@slide {fig:color-spaces}{11}
+\beamer@slide {tab:times-camera-lidar}{12}
+\beamer@slide {tab:times-stereo}{13}
+\beamer@slide {fusionprecision100}{14}
+\beamer@slide {fusion}{15}
+\beamer@slide {stereoprecision100}{16}
+\beamer@slide {stereo}{17}

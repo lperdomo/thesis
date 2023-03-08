@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<general>
+    <!-- 1-build database; 2-query database-->
+    <task>1</task>
+    <!-- shot; cshot; m2dp; cm2dp -->
+    <descriptor>m2dp</descriptor>
+    <!-- ls -->
+    <normal>ls</normal>
+    <!-- bruteforce; flann -->
+    <matcher>bruteforce</matcher>
+</general>
+<dataset>
+    <query>kitti07</query>
+    <database>kitti07</database>
+    <downsample>0</downsample>
+    <kitti00>
+        <path>../../../kitti/00/</path>
+        <amount>4541</amount>
+        <frames>frames/</frames>
+        <poses>poses.txt</poses>
+        <timestamps>times.txt</timestamps>
+        <format>kitti</format>
+        <distance>10</distance>
+        <mask>6</mask>
+    </kitti00>
+    <kitti05>
+        <path>../../../kitti/05/</path>
+        <amount>2761</amount>
+        <frames>frames/</frames>
+        <poses>poses.txt</poses>
+        <timestamps>times.txt</timestamps>
+        <format>kitti</format>
+        <distance>10</distance>
+        <mask>6</mask>
+    </kitti05>
+    <kitti06>
+        <path>../../../kitti/06/</path>
+        <amount>1101</amount>
+        <frames>frames/</frames>
+        <poses>poses.txt</poses>
+        <timestamps>times.txt</timestamps>
+        <format>kitti</format>
+        <distance>10</distance>
+        <mask>6</mask>
+    </kitti06>
+    <kitti07>
+        <path>../../../kitti/07/</path>
+        <amount>1101</amount>
+        <frames>frames/</frames>
+        <poses>poses.txt</poses>
+        <timestamps>times.txt</timestamps>
+        <format>kitti</format>
+        <distance>10</distance>
+        <mask>6</mask>
+    </kitti07>
+    <fr1room>
+        <path>../../../rgbd_dataset_freiburg1_room/</path>
+		<amount>100</amount>
+        <frames>frames/</frames>
+        <poses>groundtruth.txt</poses>
+        <timestamps>groundtruth.txt</timestamps>
+        <format>freiburg</format>
+        <distance>2</distance>
+        <mask>5</mask>
+    </fr1room>
+    <fr2desk>
+        <path>../../../rgbd_dataset_freiburg2_desk/</path>
+        <frames>frames/</frames>
+        <poses>groundtruth.txt</poses>
+        <timestamps>groundtruth.txt</timestamps>
+        <format>freiburg</format>
+        <distance>2</distance>
+        <mask>5</mask>
+    </fr2desk>
+    <fr2pioneerslam>
+        <path>../../../rgbd_dataset_freiburg2_pioneer_slam/</path>
+        <frames>frames/</frames>
+        <poses>groundtruth.txt</poses>
+        <timestamps>groundtruth.txt</timestamps>
+        <format>freiburg</format>
+        <distance>2</distance>
+        <mask>5</mask>
+    </fr2pioneerslam>
+    <fr3nostructuretexturenearwithloop>
+        <path>../../../rgbd_dataset_freiburg3_nostructure_texture_near_withloop/</path>
+        <frames>frames/</frames>
+        <poses>groundtruth.txt</poses>
+        <timestamps>groundtruth.txt</timestamps>
+        <format>freiburg</format>
+        <distance>2</distance>
+        <mask>5</mask>
+    </fr3nostructuretexturenearwithloop>
+</dataset>
+<distance_matrix>
+    <file>
+        <name>distance_matrix</name>
+        <ext>csv</ext>
+    </file>
+</distance_matrix>
+<descriptor>
+    <shot>
+    </shot>
+    <cshot>
+    </cshot>
+    <m2dp>
+        <theta_bins>16</theta_bins>
+        <rho_bins>8</rho_bins>
+        <azimuth_angles>4</azimuth_angles>
+        <elevation_angles>16</elevation_angles>
+    </m2dp>
+    <cm2dp>
+        <theta_bins>16</theta_bins>
+        <rho_bins>8</rho_bins>
+        <azimuth_angles>4</azimuth_angles>
+        <elevation_angles>16</elevation_angles>
+        <color_bins>16</color_bins>
+        <color_scheme>0</color_scheme>
+    </cm2dp>
+</descriptor>
+<normal>
+    <least_squares>
+        <scalar_radius>5</scalar_radius>
+    </least_squares>
+</normal>
+<matcher>
+    <bruteforce>
+        <k>2</k>
+        <window>50</window>
+        <threshold>0</threshold>
+    </bruteforce>
+    <flann>
+        <k>2</k>
+        <trees>16</trees>
+        <recursive_checks>32</recursive_checks>
+        <window>0</window>
+        <threshold>0</threshold>
+    </flann>
+</matcher>
+</opencv_storage>

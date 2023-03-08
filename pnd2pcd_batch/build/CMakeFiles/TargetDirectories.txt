@@ -1,0 +1,3 @@
+/home/phi/CLionProjects/prototypes/pnd2pcd_batch/build/CMakeFiles/edit_cache.dir
+/home/phi/CLionProjects/prototypes/pnd2pcd_batch/build/CMakeFiles/rebuild_cache.dir
+/home/phi/CLionProjects/prototypes/pnd2pcd_batch/build/CMakeFiles/png2pcd_batch.dir
